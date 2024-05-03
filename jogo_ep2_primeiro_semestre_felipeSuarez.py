@@ -131,13 +131,13 @@ for navio in PAISES[paiscom]:
         navios_pc.append(CONFIGURACAO[navio])
 mapa_pc = aloca_navios(mapa,navios_pc)
 
-welcome = ''' ===================================== 
+tela_primaria = ''' ===================================== 
 |                                     |
 | Bem-vindo ao INSPER - Batalha Naval |
 |                                     |
  =======   xxxxxxxxxxxxxxxxx   ======= '''
 
-aviso = f'Iniciando o jogo!\n\nComputador está alocando os navios de guerra do país {paiscom}...\nComputador já está em posição de batalha!'
+mensagem_inicio = f'Iniciando o jogo!\n\nComputador está alocando os navios de guerra do país {paiscom}...\nComputador já está em posição de batalha!'
 
 config = '''
 1: Brasil
@@ -176,7 +176,7 @@ config = '''
    1 submarino
 '''
 
-print(f'{welcome}\n\n{aviso}\n{config}')
+print(f'{tela_primaria}\n\n{mensagem_inicio}\n{config}')
 
 jogador = input('Qual o número da nação da sua frota? ')
 while jogador not in p:
@@ -356,14 +356,14 @@ while restart == 's':
 
         
         if mapa_jogador[linha][coluna] == 'A':
-            jog = 'Água!'
+            jog = 'Água, AZAR!'
         elif mapa_jogador[linha][coluna] == 'B':
-            jog = 'BOOOOMMMMM!'
+            jog = 'BOOMMM!'
         
         if mapa_pc[l][c] == 'A':
-            pc = 'Água!'
+            pc = 'Água, AZAR!'
         elif mapa_pc[l][c] == 'B':
-            pc = 'BOOOOMMMMM!'
+            pc = 'BOOMMM!'
 
 
         print(f'Jogador -> {letra1}{linha1}    {pc}\nComputador -> {ori1[coluna+1]}{linha+1}    {jog}')
